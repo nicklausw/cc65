@@ -1514,6 +1514,14 @@ static void DoP02 (void)
 
 
 
+static void DoP02X (void)
+/* Switch to 6502X CPU */
+{
+    SetCPU (CPU_6502X);
+}
+
+
+
 static void DoPC02 (void)
 /* Switch to 65C02 CPU */
 {
@@ -2041,6 +2049,7 @@ static CtrlDesc CtrlCmdTab [] = {
     { ccKeepToken,      DoConditionals  },      /* .IFNDEF */
     { ccKeepToken,      DoConditionals  },      /* .IFNREF */
     { ccKeepToken,      DoConditionals  },      /* .IFP02 */
+    { ccKeepToken,      DoConditionals  },      /* .IFP02X */
     { ccKeepToken,      DoConditionals  },      /* .IFP4510 */
     { ccKeepToken,      DoConditionals  },      /* .IFP816 */
     { ccKeepToken,      DoConditionals  },      /* .IFPC02 */
@@ -2072,6 +2081,7 @@ static CtrlDesc CtrlCmdTab [] = {
     { ccNone,           DoOrg           },
     { ccNone,           DoOut           },
     { ccNone,           DoP02           },
+    { ccNone,           DoP02X          },
     { ccNone,           DoP4510         },
     { ccNone,           DoP816          },
     { ccNone,           DoPageLength    },
